@@ -1,0 +1,14 @@
+.app-container {
+  flex-direction: column;
+  width: 100%;
+}
+
+.main-content {
+  border: red 1px dotted;
+  flex: 1;
+}
+
+.home {
+  background: url("./assets/sw-logo.svg") no-repeat center;
+  background-size: 100%;
+}

@@ -1,0 +1,103 @@
+.character-sheet {
+	align-items: center;
+	justify-content: start;
+}
+.character-sheet * {
+	
+}
+
+.character-sheet button {
+	font-size: 0.8em;
+}
+
+.sheet-nav {
+	width: fit-content;
+}
+
+.sheet-nav button {
+	border-radius: 0;
+}
+
+.sheet-nav .sheet-main {
+	border-radius: 8px 0 0 8px;
+}
+
+.sheet-nav .combat {
+	border-radius: 0 8px 8px 0;
+}
+
+.cs-top {
+	width: 100%;
+}
+
+.cs-top .title {
+    justify-content: center;
+}
+
+.stats table {
+	width: 180px;
+}
+
+.stats tr {
+	align-items: center;
+}
+
+.stats .scores {
+	flex-direction: column;
+}
+
+.stats .scores :first-child {
+    font-size: 1.2em;
+}
+
+.stats .scores :last-child {
+    font-size: 0.8em;
+}
+
+.hit-points table {
+	width: 200px;
+	height: 50%;
+}
+
+.hit-points .current-hp {
+	height: 100px;
+}
+
+.current-hp td {
+	height: 100%;
+	align-items: center;
+}
+
+.max-hp-row .label {
+	border-right: 1px lightgray blue;
+}
+
+.hit-points td {
+	width: 100%;
+}
+
+.stats,
+.hit-points {
+	flex-direction: column;
+	align-items: center;
+}
+
+.character-sheet table {
+	justify-content: space-between;
+	border-collapse: collapse;
+}
+
+.character-sheet tbody {
+	flex-direction: column;
+	width: 100%;
+}
+
+.character-sheet tr {
+	justify-content: space-between;
+	border: 1px solid lightgray;
+	padding: 5px 15px;
+}
+
+.portrait {
+	max-height: 200px;
+}
