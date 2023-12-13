@@ -1,16 +1,17 @@
 import { useState } from "react";
 import "./CharacterSheet.css";
 import img from "../../../assets/kushiban.jpg";
+import character from "../../../dev-temp/Minrit.json";
 
 export default function CharacterSheet() {
 	const [state, setState] = useState();
 	const [portrait, setPortrait] = useState(img);
-	const [str, setStr] = useState(8);
-	const [dex, setDex] = useState(10);
-	const [con, setCon] = useState(11);
-	const [int, setInt] = useState(12);
-	const [wis, setWis] = useState(13);
-	const [cha, setCha] = useState(15);
+	const [str, setStr] = useState(character.abilities.str);
+	const [dex, setDex] = useState(character.abilities.dex);
+	const [con, setCon] = useState(character.abilities.con);
+	const [int, setInt] = useState(character.abilities.int);
+	const [wis, setWis] = useState(character.abilities.wis);
+	const [cha, setCha] = useState(character.abilities.cha);
 	const [tempStr, setTempStr] = useState();
 	const [tempDex, setTempDex] = useState();
 	const [tempCon, setTempCon] = useState();
@@ -18,11 +19,8 @@ export default function CharacterSheet() {
 	const [tempWis, setTempWis] = useState();
 	const [tempCha, setTempCha] = useState();
 
-	const [totalHP, setTotalHP] = useState(4);
 	const [currentVitality, setCurrentVitality] = useState(4);
 	const [currentWounds, setCurrentWounds] = useState(4);
-	const [maxVitality, setMaxVitality] = useState(4);
-	const [maxWounds, setMaxWounds] = useState(4);
 	const [skillTable, setSkillTable] = useState();
 
 	function calcMod(score) {
@@ -32,8 +30,31 @@ export default function CharacterSheet() {
 		return Math.floor((score - 10) / 2);
 	}
 
+	function calcBonuses(bonusArr) {
+		let totalBonus = 0;
+
+		for (let i = 0; i < bonusArr.length; i++) {
+			totalBonus += bonusArr[i].bonus;
+		}
+
+		return totalBonus;
+	}
+
 	return (
 		<main className="character-sheet">
+			<section className="basic-info">
+				<div className="info-section">
+					<span className="info-name">{character.name}</span>
+					<span className="info-species">
+						{character.description.genderIdentity}{" "}
+						{character.species.name}
+					</span>
+					<span className="info-class">
+						{character.class.name} {character.level}
+					</span>
+				</div>
+			</section>
+
 			<section className="sheet-nav">
 				<button className="sheet-main">Main</button>
 				<button className="skills">Skills</button>
@@ -41,163 +62,132 @@ export default function CharacterSheet() {
 				<button className="class">Class</button>
 				<button className="feats">Feats</button>
 				<button className="equipment">Equipment</button>
-				<button className="combat">Combat</button>
 			</section>
 
 			<section className="cs-top">
 				<div className="stats">
-					<table>
-						<tbody>
-							<tr className="title">
-								<td>
-									<h4>Abilities</h4>
-								</td>
-							</tr>
-							<tr className="str">
-								<td
-									className="scores"
-									style={{ flexDirection: "column" }}>
-									Strength
-									<span>{str}</span>
-									<span>{calcMod(str)}</span>
-								</td>
-								<td
-									className="scores"
-									style={{ flexDirection: "column" }}>
-									Temp
-									<span>{tempStr || "--"}</span>
-									<span>
-										{tempStr ? calcMod(tempStr) : "--"}
-									</span>
-								</td>
-							</tr>
-							<tr className="dex">
-								<td
-									className="scores"
-									style={{ flexDirection: "column" }}>
-									Dexterity
-									<span>{dex}</span>
-									<span>{calcMod(dex)}</span>
-								</td>
-								<td
-									className="scores"
-									style={{ flexDirection: "column" }}>
-									Temp
-									<span>{tempDex || "--"}</span>
-									<span>
-										{tempDex ? calcMod(tempDex) : "--"}
-									</span>
-								</td>
-							</tr>
-							<tr className="con">
-								<td
-									className="scores"
-									style={{ flexDirection: "column" }}>
-									Constitution
-									<span>{con}</span>
-									<span>{calcMod(con)}</span>
-								</td>
-								<td
-									className="scores"
-									style={{ flexDirection: "column" }}>
-									Temp
-									<span>{tempCon || "--"}</span>
-									<span>
-										{tempCon ? calcMod(tempCon) : "--"}
-									</span>
-								</td>
-							</tr>
-							<tr className="int">
-								<td
-									className="scores"
-									style={{ flexDirection: "column" }}>
-									Intelligence
-									<span>{int}</span>
-									<span>{calcMod(int)}</span>
-								</td>
-								<td
-									className="scores"
-									style={{ flexDirection: "column" }}>
-									Temp
-									<span>{tempInt || "--"}</span>
-									<span>
-										{tempInt ? calcMod(tempInt) : "--"}
-									</span>
-								</td>
-							</tr>
-							<tr className="wis">
-								<td
-									className="scores"
-									style={{ flexDirection: "column" }}>
-									Wisdom
-									<span>{wis}</span>
-									<span>{calcMod(wis)}</span>
-								</td>
-								<td
-									className="scores"
-									style={{ flexDirection: "column" }}>
-									Temp
-									<span>{tempWis || "--"}</span>
-									<span>
-										{tempWis ? calcMod(tempWis) : "--"}
-									</span>
-								</td>
-							</tr>
-							<tr className="cha">
-								<td
-									className="scores"
-									style={{ flexDirection: "column" }}>
-									Charisma
-									<span>{cha}</span>
-									<span>{calcMod(cha)}</span>
-								</td>
-								<td
-									className="scores"
-									style={{ flexDirection: "column" }}>
-									Temp
-									<span>{tempCha || "--"}</span>
-									<span>
-										{tempCha ? calcMod(tempCha) : "--"}
-									</span>
-								</td>
-							</tr>
-						</tbody>
-					</table>
+					<div className="stat-container">
+						<div
+							className="stat"
+							id="str">
+							<h4 className="stat-name-label">Strength</h4>
+							<h2 className="stat-score">{str}</h2>
+							<span className="stat-mod">{calcMod(str)}</span>
+						</div>
+						<div
+							className="stat"
+							id="dex">
+							<h4 className="stat-name-label">Dexterity</h4>
+							<h2 className="stat-score">{dex}</h2>
+							<span className="stat-mod">{calcMod(dex)}</span>
+						</div>
+						<div
+							className="stat"
+							id="con">
+							<h4 className="stat-name-label">Constitution</h4>
+							<h2 className="stat-score">{con}</h2>
+							<span className="stat-mod">{calcMod(con)}</span>
+						</div>
+					</div>
+					<div className="stat-container">
+						<div
+							className="stat"
+							id="int">
+							<h4 className="stat-name-label">Intelligence</h4>
+							<h2 className="stat-score">{int}</h2>
+							<span className="stat-mod">{calcMod(int)}</span>
+						</div>
+						<div
+							className="stat"
+							id="wis">
+							<h4 className="stat-name-label">Wisdom</h4>
+							<h2 className="stat-score">{wis}</h2>
+							<span className="stat-mod">{calcMod(wis)}</span>
+						</div>
+						<div
+							className="stat"
+							id="cha">
+							<h4 className="stat-name-label">Charisma</h4>
+							<h2 className="stat-score">{cha}</h2>
+							<span className="stat-mod">{calcMod(cha)}</span>
+						</div>
+					</div>
 				</div>
 
-				<div className="hit-points">
-					<table>
-						<tbody>
-							<tr>
-								<td>Vitality</td>
-								<td>Wounds</td>
-							</tr>
-							<tr className="current-hp">
-								<td>{currentVitality}</td>
-								<td>{currentWounds}</td>
-							</tr>
-							<tr className="max-hp-row">
-								<td className="label">Max: </td>
-								<td>{maxVitality}</td>
-								<td className="label">Max: </td>
-								<td>{maxWounds}</td>
-							</tr>
-						</tbody>
-					</table>
+				<div className="top-center">
+					<div className="damage-point-container">
+						<div className="dp-container">
+							<div className="damage-point">
+								<h4 className="dp-name-label">Vitality</h4>
+								<h2 className="dp-current">
+									{character.vitality.current}
+								</h2>
+								<span className="dp-max">
+									Max: {character.vitality.max}
+								</span>
+							</div>
+							<div className="damage-point">
+								<h4 className="dp-name-label">Wounds</h4>
+								<h2 className="dp-current">
+									{character.wounds.current}
+								</h2>
+								<span className="dp-max">
+									Max: {character.wounds.max}
+								</span>
+							</div>
+						</div>
+						<div>
+							<span className="dp-info">
+								Vitality Die: {character.vitality.dice}
+							</span>
+						</div>
+					</div>
+					<div className="initiative-container">
+						<div className="initiative-title">Initiative</div>
+						<div className="initiative">
+							<div className="initiative-section">
+								<span className="initiative-content">
+									{character.initiative.dexBase +
+										calcBonuses(
+											character.initiative.bonuses
+										)}
+								</span>
+								<span className="initiative-label">Total</span>
+							</div>
+							<div className="initiative-section">
+								<span className="initiative-content">=</span>
+								<span className="initiative-label"></span>
+							</div>
+							<div className="initiative-section">
+								<span className="initiative-content">
+									{character.initiative.dexBase}
+								</span>
+								<span className="initiative-label">Dex</span>
+							</div>
+							<div className="initiative-section">
+								<span className="initiative-content">+</span>
+								<span className="initiative-label"></span>
+							</div>
+							<div className="initiative-section">
+								<span className="initiative-content">
+									{calcBonuses(character.initiative.bonuses)}
+								</span>
+								<span className="initiative-label">Misc</span>
+							</div>
+						</div>
+					</div>
 				</div>
-
-				<div className="basic-info"></div>
 			</section>
 
-			<section className="cs-center">
-				<div className="saving-throws"></div>
-				<div className="speed-initiative"></div>
-			</section>
+			{/* <section className="cs-center">
+        <div className="saving-throws"></div>
+        <div className="speed-initiative"></div>
+      </section> */}
 
-			<section className="skills">
-				Skills
-				{skillTable}
-			</section>
+			{/* <section className="skills">
+        Skills
+        {skillTable}
+      </section> */}
 		</main>
 	);
 }

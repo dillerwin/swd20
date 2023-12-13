@@ -14,7 +14,10 @@
 	-webkit-text-size-adjust: 100%;
 
 	background: url("./assets/outcast.svg") no-repeat center;
-	background-size: 60%;
+	background-size: 55%;
+
+	/* variables */
+	--border-primary: 1px solid lightgray;
 }
 
 html,
@@ -27,6 +30,7 @@ body {
 body {
 	display: flex;
 	flex-direction: column;
+	justify-content: center;
 }
 
 body * {
@@ -36,13 +40,15 @@ body * {
 	margin: 0;
 }
 
-div, main {
+div,
+main {
 	height: 100%;
 	width: 100%;
 }
 
 main {
 	flex-direction: column;
+	width: calc(100% - 10px);
 }
 
 a {

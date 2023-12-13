@@ -14,11 +14,6 @@ export default function App() {
 	const compendium = <Compendium />;
 	const characterSheet = <CharacterSheet />;
 
-	async function restartApp() {
-		// Learn more about Tauri commands at https://tauri.app/v1/guides/features/command
-		await invoke("restart_app");
-	}
-
 	function cancelRefresh(event) {
 		if (event.key === "F5") {
 			event.preventDefault();
