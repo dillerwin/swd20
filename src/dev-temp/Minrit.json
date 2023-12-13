@@ -1,0 +1,540 @@
+{
+	"player": "Dillon",
+	"name": "Minrit",
+	"level": 3,
+	"species": {
+		"name": "Kushiban",
+		"baseSpeed": "6m",
+		"size": "Small"
+	},
+	"description": {
+		"age": 13,
+		"height": "0.4m",
+		"weight": null,
+		"skin": null,
+		"hair": null,
+		"eyes": null,
+		"genderIdentity": "Male",
+		"handedness": "right",
+		"alignment": "good"
+	},
+	"abilities": {
+		"str": 5,
+		"dex": 16,
+		"con": 10,
+		"int": 18,
+		"wis": 15,
+		"cha": 12
+	},
+	"savingThrows": {
+		"reflex": {
+			"base": 3
+		},
+		"fortitude": {
+			"base": 3
+		},
+		"will": {
+			"base": 1
+		}
+	},
+	"class": {
+		"name": "Scrounger",
+		"level": 3,
+		"multiclass": true,
+		"classes": [
+			{
+				"name": "Fringer",
+				"level": 2
+			},
+			{
+				"name": "Tech Specialist",
+				"level": 1
+			}
+		]
+	},
+	"initiative": {
+		"dexBase": 3,
+		"bonuses": [
+			{
+				"source": "Improved Initiative",
+				"bonus": 4
+			}
+		]
+	},
+	"vitality": {
+		"max": 14,
+		"current": 9,
+		"dice": "2d8/1d6"
+	},
+	"wounds": {
+		"max": 10,
+		"current": 10
+	},
+	"forcePoints": {
+		"lightside": 0,
+		"darksid": 0
+	},
+	"inspiration": true,
+	"reputation": 0,
+	"followers": null,
+	"languages": [
+		{
+			"name": "Kushiban",
+			"speak": true,
+			"readWrite": true,
+			"isPrimaryLanguage": true
+		},
+		{
+			"name": "Standard",
+			"speak": true,
+			"readWrite": true
+		},
+		{
+			"name": "Huttese",
+			"speak": true,
+			"readWrite": true
+		},
+		{
+			"name": "Sullustese",
+			"speak": true,
+			"readWrite": true
+		},
+		{
+			"name": "Verpine",
+			"speak": true,
+			"readWrite": true
+		}
+	],
+	"skills": [
+		{
+			"name": "Appraise",
+			"classSkill": false,
+			"ranks": 0,
+			"keyAbility": "int",
+			"useUntrained": true,
+			"armorCheckPenalty": false
+		},
+		{
+			"name": "Astrogate",
+			"classSkill": true,
+			"classes": ["Tech Specialist"],
+			"ranks": 0,
+			"keyAbility": "int",
+			"useUntrained": false,
+			"armorCheckPenalty": false
+		},
+		{
+			"name": "Balance",
+			"classSkill": false,
+			"ranks": 0,
+			"keyAbility": "dex",
+			"useUntrained": true,
+			"armorCheckPenalty": false
+		},
+		{
+			"name": "Bluff",
+			"classSkill": false,
+			"ranks": 0,
+			"keyAbility": "cha",
+			"useUntrained": true,
+			"armorCheckPenalty": false
+		},
+		{
+			"name": "Climb",
+			"classSkill": true,
+			"classes": ["Fringer"],
+			"ranks": 0,
+			"keyAbility": "str",
+			"useUntrained": true,
+			"armorCheckPenalty": true
+		},
+		{
+			"name": "Computer Use",
+			"classSkill": true,
+			"classes": ["Tech Specialist", "Fringer"],
+			"ranks": 4,
+			"featBonus": 2,
+			"featBonusSource": ["Gearhead"],
+			"situationalBonuses": {
+				"bonus": 4,
+				"bonusUse": "Downloads"
+			},
+			"keyAbility": "int",
+			"useUntrained": true,
+			"armorCheckPenalty": false
+		},
+		{
+			"name": "Craft (Computers)",
+			"classSkill": true,
+			"classes": ["Fringer", "Tech Specialist"],
+			"ranks": 2,
+			"keyAbility": "int",
+			"useUntrained": false,
+			"armorCheckPenalty": false
+		},
+		{
+			"name": "Craft (Electronic Devices)",
+			"classSkill": true,
+			"classes": ["Fringer", "Tech Specialist"],
+			"ranks": 4,
+			"keyAbility": "int",
+			"useUntrained": false,
+			"armorCheckPenalty": false
+		},
+		{
+			"name": "Craft (Medpacs)",
+			"classSkill": true,
+			"classes": ["Fringer", "Tech Specialist"],
+			"ranks": 1,
+			"keyAbility": "int",
+			"useUntrained": false,
+			"armorCheckPenalty": false
+		},
+		{
+			"name": "Craft (Space Transports)",
+			"classSkill": true,
+			"classes": ["Fringer", "Tech Specialist"],
+			"ranks": 2,
+			"keyAbility": "int",
+			"useUntrained": false,
+			"armorCheckPenalty": false
+		},
+		{
+			"name": "Demolitions",
+			"classSkill": true,
+			"classes": ["Tech Specialist"],
+			"ranks": 1,
+			"keyAbility": "int",
+			"useUntrained": false,
+			"armorCheckPenalty": false
+		},
+		{
+			"name": "Diplomacy",
+			"classSkill": false,
+			"ranks": 2,
+			"keyAbility": "cha",
+			"useUntrained": true,
+			"armorCheckPenalty": false
+		},
+		{
+			"name": "Disable Device",
+			"classSkill": true,
+			"classes": ["Tech Specialist"],
+			"ranks": 4,
+			"keyAbility": "int",
+			"useUntrained": false,
+			"armorCheckPenalty": false
+		},
+		{
+			"name": "Disguise",
+			"classSkill": false,
+			"ranks": 0,
+			"keyAbility": "cha",
+			"useUntrained": true,
+			"armorCheckPenalty": false
+		},
+		{
+			"name": "Entertain",
+			"classSkill": false,
+			"ranks": 0,
+			"keyAbility": "cha",
+			"useUntrained": true,
+			"armorCheckPenalty": false
+		},
+		{
+			"name": "Escape Artist",
+			"classSkill": false,
+			"ranks": 0,
+			"racialBonus": 4,
+			"keyAbility": "dex",
+			"useUntrained": true,
+			"armorCheckPenalty": false
+		},
+		{
+			"name": "Forgery",
+			"classSkill": false,
+			"ranks": 0,
+			"keyAbility": "int",
+			"useUntrained": true,
+			"armorCheckPenalty": false
+		},
+		{
+			"name": "Gamble",
+			"classSkill": true,
+			"classes": ["Fringer"],
+			"ranks": 0,
+			"keyAbility": "wis",
+			"useUntrained": true,
+			"armorCheckPenalty": false
+		},
+		{
+			"name": "Gather Information",
+			"classSkill": true,
+			"classes": ["Fringer"],
+			"ranks": 1,
+			"toolBonus": 2,
+			"toolBonusSource": "Personal Computer",
+			"keyAbility": "cha",
+			"useUntrained": true,
+			"armorCheckPenalty": false
+		},
+		{
+			"name": "Handle Animal",
+			"classSkill": true,
+			"classes": ["Fringer"],
+			"ranks": 1,
+			"keyAbility": "cha",
+			"useUntrained": false,
+			"armorCheckPenalty": false
+		},
+		{
+			"name": "Hide",
+			"classSkill": true,
+			"classes": ["Fringer"],
+			"ranks": 0,
+			"racialBonus": 4,
+			"keyAbility": "dex",
+			"useUntrained": true,
+			"armorCheckPenalty": true
+		},
+		{
+			"name": "Intimidate",
+			"classSkill": false,
+			"ranks": 0,
+			"keyAbility": "cha",
+			"useUntrained": true,
+			"armorCheckPenalty": false
+		},
+		{
+			"name": "Jump",
+			"classSkill": true,
+			"classes": ["Fringer"],
+			"ranks": 0,
+			"racialBonus": 4,
+			"keyAbility": "str",
+			"useUntrained": true,
+			"armorCheckPenalty": true
+		},
+		{
+			"name": "Knowledge (Technology)",
+			"classSkill": true,
+			"classes": ["Fringer", "Tech Specialist"],
+			"ranks": 2,
+			"keyAbility": "int",
+			"useUntrained": false,
+			"armorCheckPenalty": false
+		},
+		{
+			"name": "Knowledge (Jedi Lore)",
+			"classSkill": true,
+			"classes": ["Fringer", "Tech Specialist"],
+			"ranks": 2,
+			"keyAbility": "int",
+			"useUntrained": false,
+			"armorCheckPenalty": false
+		},
+		{
+			"name": "Knowledge (Engineering)",
+			"classSkill": true,
+			"classes": ["Fringer", "Tech Specialist"],
+			"ranks": 1,
+			"keyAbility": "int",
+			"useUntrained": false,
+			"armorCheckPenalty": false
+		},
+		{
+			"name": "Knowledge (Spacecraft)s",
+			"classSkill": true,
+			"classes": ["Fringer", "Tech Specialist"],
+			"ranks": 2,
+			"keyAbility": "int",
+			"useUntrained": false,
+			"armorCheckPenalty": false
+		},
+		{
+			"name": "Knowledge (Lancer Pursuit Craft)",
+			"classSkill": true,
+			"classes": ["Fringer", "Tech Specialist"],
+			"ranks": 1,
+			"keyAbility": "int",
+			"useUntrained": false,
+			"armorCheckPenalty": false
+		},
+		{
+			"name": "Listen",
+			"classSkill": true,
+			"classes": ["Fringer"],
+			"ranks": 4,
+			"keyAbility": "wis",
+			"useUntrained": true,
+			"armorCheckPenalty": false
+		},
+		{
+			"name": "Move Silently",
+			"classSkill": false,
+			"ranks": 0,
+			"keyAbility": "dex",
+			"useUntrained": true,
+			"armorCheckPenalty": false
+		},
+		{
+			"name": "Pilot",
+			"classSkill": true,
+			"classes": ["Fringer", "Tech Specialist"],
+			"ranks": 1,
+			"keyAbility": "dex",
+			"useUntrained": false,
+			"armorCheckPenalty": false
+		},
+		{
+			"name": "Profession (Engineer)",
+			"classSkill": true,
+			"classes": ["Fringer", "Tech Specialist"],
+			"ranks": 1,
+			"keyAbility": "wis",
+			"useUntrained": false,
+			"armorCheckPenalty": false
+		},
+		{
+			"name": "Repair",
+			"classSkill": true,
+			"classes": ["Fringer", "Tech Specialist"],
+			"ranks": 5,
+			"featBonus": 2,
+			"featBonusSource": ["Gearhead"],
+			"toolBonus": 2,
+			"toolBonusSource": "Tool kit",
+			"keyAbility": "int",
+			"useUntrained": false,
+			"armorCheckPenalty": false
+		},
+		{
+			"name": "Ride",
+			"classSkill": true,
+			"classes": ["Fringer"],
+			"ranks": 0,
+			"keyAbility": "dex",
+			"useUntrained": true,
+			"armorCheckPenalty": false
+		},
+		{
+			"name": "Search",
+			"classSkill": true,
+			"classes": ["Fringer", "Tech Specialist"],
+			"ranks": 4,
+			"keyAbility": "int",
+			"useUntrained": true,
+			"armorCheckPenalty": false
+		},
+		{
+			"name": "Sense Motive",
+			"classSkill": false,
+			"ranks": 0,
+			"keyAbility": "wis",
+			"useUntrained": true,
+			"armorCheckPenalty": false
+		},
+		{
+			"name": "Sleight of Hand",
+			"classSkill": false,
+			"ranks": 0,
+			"keyAbility": "dex",
+			"useUntrained": false,
+			"armorCheckPenalty": false
+		},
+		{
+			"name": "Spot",
+			"classSkill": true,
+			"classes": ["Fringer"],
+			"ranks": 0,
+			"keyAbility": "wis",
+			"useUntrained": true,
+			"armorCheckPenalty": false
+		},
+		{
+			"name": "Survival",
+			"classSkill": true,
+			"classes": ["Fringer"],
+			"ranks": 0,
+			"featBonus": 2,
+			"featBonusSource": ["Self-Sufficient"],
+			"keyAbility": "wis",
+			"useUntrained": true,
+			"armorCheckPenalty": false
+		},
+		{
+			"name": "Swim",
+			"classSkill": true,
+			"classes": ["Fringer"],
+			"ranks": 0,
+			"keyAbility": "str",
+			"useUntrained": true,
+			"armorCheckPenalty": false
+		},
+		{
+			"name": "Treat Injury",
+			"classSkill": true,
+			"classes": ["Fringer", "Tech Specialist"],
+			"ranks": 2,
+			"featBonus": 5,
+			"featBonusSource": ["Self-Sufficient", "Skill Emphasis"],
+			"keyAbility": "int",
+			"useUntrained": true,
+			"armorCheckPenalty": false
+		},
+		{
+			"name": "Tumble",
+			"classSkill": false,
+			"ranks": 0,
+			"keyAbility": "dex",
+			"useUntrained": false,
+			"armorCheckPenalty": false
+		}
+	],
+	"feats": [
+		{
+			"name": "Scrounging",
+			"description": "You can spend 8 hours searching through scrap yards, garbage dumps, etc to come up with material that still has value. \n\n Make a Search check to determine credit value. This is not automatic profit, the items still must be sold.\n10-14 -> 2d10\n15-19 -> 1d10x10\n20-24 -> 2d10x10\n25-29 -> 2d10x20\n30+ -> 2d10x50",
+			"origin": "Scrounger class feat"
+		},
+		{
+			"name": "Gearhead",
+			"origin": "First level feat"
+		},
+		{
+			"name": "Improved Initiative",
+			"origin": "Racial",
+			"affectsSkill": "Initiative",
+			"skillBonus": 4
+		},
+		{
+			"name": "Skill Emphasis",
+			"type": "Treat Injury",
+			"origin": "Level up"
+		},
+		{
+			"name": "Weapon Group Proficiency",
+			"type": "Blaster Pistols",
+			"origin": "Special Training"
+		},
+		{
+			"name": "Weapon Group Proficiency",
+			"type": "Primitive",
+			"origin": "class"
+		},
+		{
+			"name": "Weapon Group Proficiency",
+			"type": "Simple",
+			"origin": "class"
+		},
+		{
+			"name": "Weapon Group Proficiency",
+			"type": "Vibro",
+			"origin": "Special Training"
+		},
+		{
+			"name": "Self-Sufficient",
+			"origin": "Level up"
+		}
+	]
+}
